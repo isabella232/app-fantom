@@ -30,8 +30,8 @@ void ui_idle(void) {
     // no instruction is being processed; the last one called idle
     currentIns = INS_NONE;
 
-    // we support only Nano S and Nano X devices
-#if defined(TARGET_NANOS) || defined(TARGET_NANOX)
+    // we support only Nano S/S+ and Nano X devices
+#if defined(TARGET_NANOS) || defined(TARGET_NANOX) || defined(TARGET_NANOS2)
     // reserve a display stack slot if none yet
     if(G_ux.stack_count == 0) {
         ux_stack_push();

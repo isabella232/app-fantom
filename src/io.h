@@ -52,7 +52,7 @@ void nanos_set_timer(int ms, timeout_callback_fn_t* cb);
 // nanos_clear_timer removes timeout callback from the timer.
 void nanos_clear_timer();
 
-#elif defined(TARGET_NANOX)
+#elif defined(TARGET_NANOX) || defined(TARGET_NANOS2)
 // On Nano X the new SDK UX_STEP_CB/UX_STEP_NOCB macros automatically push a confirm callback
 // to G_ux.stack[].ticker_callback with timeout zero which causes our callback
 // to be ignored in UX_TICKER_EVENT, so set_timer does not work on Nano X.
